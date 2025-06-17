@@ -1,0 +1,86 @@
+/* src/app.component.css */
+
+/* Wadah utama untuk semua item accordion */
+.accordion-container {
+  max-width: 800px; /* Diperbesar dari 700px */
+  margin: auto;
+}
+
+/* Setiap item accordion (panel) */
+.accordion-item {
+  background-color: #ffffff;
+  margin-bottom: 1.25rem; /* Jarak antar item sedikit diperbesar */
+  border-radius: 0.75rem;
+  border: 1px solid #eef2f6;
+  border-left: 5px solid #4f8ff7; /* Border kiri sedikit ditebalkan */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+/* Header dari setiap item */
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.75rem; /* Padding diperbesar agar header lebih tinggi */
+  cursor: pointer;
+  color: #4f8ff7;
+  font-weight: 600;
+  font-size: 1.2rem; /* Ukuran font header diperbesar */
+}
+
+/* Ikon panah (chevron) */
+.accordion-header .icon {
+  color: #4f8ff7;
+  transition: transform 0.3s ease-in-out;
+  width: 24px; /* Ukuran ikon diperbesar */
+  height: 24px;
+}
+
+/* Konten yang bisa disembunyikan */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+}
+
+/* Bungkus konten untuk padding */
+.content-inner {
+  padding: 0 1.75rem 1.75rem 1.75rem; /* Padding konten disesuaikan dengan header */
+  color: #333333;
+  font-size: 1rem; /* Ukuran font konten diatur agar mudah dibaca */
+  line-height: 1.6; /* Jarak antar baris teks diperbaiki */
+}
+.content-inner p {
+  margin-bottom: 1rem;
+}
+.content-inner ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+/* === Style saat item AKTIF/TERBUKA === */
+
+/* Putar ikon saat aktif */
+.accordion-item.active .icon {
+  transform: rotate(180deg);
+}
+
+/* Atur tinggi maksimal konten saat aktif agar muncul */
+.accordion-item.active .accordion-content {
+  max-height: 1000px;
+}
+
+/* === Styling untuk AI Generator (tambahan) === */
+.result-box {
+  background-color: #f8f9fa;
+  text-align: left;
+}
+.result-box pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #374151;
+}

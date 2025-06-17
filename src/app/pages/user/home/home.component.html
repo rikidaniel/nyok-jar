@@ -1,32 +1,127 @@
-<header class="header-container">
-  <div class="logo">
-    <a href="#">NyokJar</a>
-  </div>
-  <nav class="nav-menu">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Layanan</a></li>
-      <li><a href="#">Struktur Tim</a></li>
-      <li><a href="#">Pembayaran</a></li>
-      <li><a href="#">Testimoni</a></li>
-      <li><a href="#">Chat Konsultasi</a></li>
-    </ul>
-  </nav>
-  <div class="header-button">
-    <button class="consultation-btn">Konsultasi Sekarang</button>
-  </div>
-</header>
 
-<section class="hero-container">
-  <div class="hero-text">
-    <h1>Skripsi Nggak Harus Sendiri</h1>
-    <p>
-      Layanan konsultasi, bimbingan, dan bantuan profesional untuk mahasiswa
-      yang menghadapi tantangan dalam mengerjakan skripsi dan tugas akhir.
-    </p>
-    <button class="consultation-btn-main">Konsultasi Sekarang</button>
+<div class="container hero-section">
+  <div class="row align-items-center">
+    <div class="col-lg-6 col-md-12 text-center text-lg-start">
+      <h1 class="hero-title">Skripsi Nggak Harus Sendiri</h1>
+      <p class="hero-subtitle text-muted">
+        Layanan konsultasi, bimbingan, dan bantuan profesional untuk mahasiswa yang menghadapi tantangan dalam mengerjakan skripsi dan tugas akhir.
+      </p>
+      <a href="#" class="btn btn-primary btn-consult-main rounded-pill">Konsultasi Sekarang</a>
+    </div>
+    <div class="col-lg-6 col-md-12 mt-5 mt-lg-0">
+      <img src="https://sevima.com/wp-content/uploads/2021/11/skripsi.jpg" class="img-fluid rounded-2" alt="Workspace with laptop and notebook">
+    </div>
   </div>
-  <div class="hero-image">
-    <img src="https://sevima.com/wp-content/uploads/2021/11/skripsi.jpg" alt="Mahasiswa mengerjakan skripsi">
+</div>
+
+<section class="services-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Layanan Kami</h2>
+      </div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+        <div class="service-card">
+          <div class="card-icon">?</div>
+          <h4 class="card-title">Bimbingan Skripsi</h4>
+          <p class="card-text">
+            Bantuan komprehensif dalam penyusunan proposal, penulisan bab, hingga revisi akhir skripsi.
+          </p>
+          <a routerLink="/layanan/bimbingan-skripsi" class="card-link">Pelajari Lebih Lanjut</a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+        <div class="service-card">
+          <div class="card-icon">?</div>
+          <h4 class="card-title">Bantuan Coding</h4>
+          <p class="card-text">
+            Dukungan dalam pembuatan program, debugging, hingga penjelasan kode untuk proyek skripsi Anda.
+          </p>
+          <a routerLink="/layanan/bantuan-coding" class="card-link">Pelajari Lebih Lanjut</a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+        <div class="service-card">
+          <div class="card-icon">?</div>
+          <h4 class="card-title">Analisis Data</h4>
+          <p class="card-text">
+            Pendampingan dalam pengolahan dan interpretasi data statistik untuk penelitian Anda.
+          </p>
+          <a routerLink="/layanan/analisis-data" class="card-link">Pelajari Lebih Lanjut</a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+        <div class="service-card">
+          <div class="card-icon">??</div>
+          <h4 class="card-title">Proofreading & Presentasi</h4>
+          <p class="card-text">
+            Pemeriksaan tata bahasa, ejaan, dan persiapan materi presentasi untuk sidang skripsi.
+          </p>
+          <a routerLink="/layanan/proofreading" class="card-link">Pelajari Lebih Lanjut</a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
+
+
+
+<div class="ai-assistant-container">
+  <div class="card shadow-sm">
+    <div class="card-body p-4 p-md-5">
+
+      <h2 class="card-title text-center fw-bold mb-3">
+        ✨ Asisten Ide Skripsi AI
+      </h2>
+
+      <p class="card-subtitle text-center text-muted mb-4">
+        Masukkan topik skripsi atau ide kasar Anda, dan biarkan AI kami membantu Anda menghasilkan ide-ide dan pertanyaan penelitian yang lebih lengkap!
+      </p>
+
+      <div class="mb-3">
+        <textarea
+          class="form-control"
+          id="topic-input"
+          rows="4"
+          placeholder="Contoh: 'Pengaruh media sosial terhadap kesehatan mental remaja' atau 'Perkembangan teknologi AI dalam pendidikan.'"
+          [(ngModel)]="userInput"
+          [disabled]="isLoading"
+        ></textarea>
+      </div>
+
+      <div class="d-grid">
+        <button class="btn btn-primary-custom btn-lg fw-semibold" (click)="generateIdeas()" [disabled]="isLoading">
+          <span *ngIf="!isLoading">✨ Dapatkan Ide Skripsi</span>
+          <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          <span *ngIf="isLoading"> Memproses...</span>
+        </button>
+      </div>
+
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+
+      <hr class="my-4">
+
+      <div class="ai-output-box">
+        <p *ngIf="isInitialState && !isLoading">{{ aiResult }}</p>
+
+        <div *ngIf="isLoading" class="d-flex justify-content-center align-items-center">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <span class="ms-3">AI sedang berpikir...</span>
+        </div>
+
+        <pre *ngIf="!isInitialState && !isLoading && !errorMessage" class="ai-result-text">{{ aiResult }}</pre>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './chat-konsultasi.component.css'
 })
 export class ChatKonsultasiComponent {
+  static readonly ROUTER = 'chat-konsultasi';
+  static readonly NAVIGATE = '/navigation/chat-konsultasi';
 
 }

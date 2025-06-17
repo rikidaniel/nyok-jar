@@ -1,0 +1,198 @@
+/* Anda dapat menyimpan variabel warna di styles.css global jika diinginkan */
+:host {
+  --primary-blue: #3b82f6; /* Warna biru utama dari gambar */
+  --light-gray-bg: #f8f9fa; /* Warna latar belakang navbar Bootstrap */
+}
+
+/* Navbar Styling */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand .logo-nj {
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin-right: 5px;
+}
+
+.navbar-nav .nav-link {
+  color: #6c757d; /* text-muted */
+  font-weight: 500;
+  margin: 0 10px;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: var(--primary-blue);
+}
+
+/* Tombol Konsultasi di Navbar */
+.btn-consult-nav {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 10px 20px;
+}
+
+.btn-consult-nav:hover {
+  background-color: #336fcc; /* Sedikit lebih gelap saat hover */
+  border-color: #336fcc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Variabel Warna */
+:host {
+  --primary-blue: #3b82f6;
+  --footer-bg: #212529; /* Warna gelap standar Bootstrap */
+  --footer-text: #adb5bd; /* Warna abu-abu terang */
+  --footer-heading-text: #ffffff;
+}
+
+/* Styling CTA Banner */
+.cta-banner {
+  background-color: var(--primary-blue);
+}
+
+.cta-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.cta-subtitle {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 1rem auto 0;
+  opacity: 0.9;
+}
+
+.btn-whatsapp {
+  background-color: #ffffff;
+  color: var(--primary-blue);
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 50px; /* Membuat tombol menjadi oval */
+  transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling Footer */
+.main-footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 60px 0 20px 0;
+}
+
+.footer-logo-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.footer-logo-wrapper .logo-ny {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  color: #343a40;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-right: 12px;
+}
+
+.footer-logo-wrapper .logo-text {
+  color: var(--footer-heading-text);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.copyright-text {
+  font-size: 0.9rem;
+}
+
+.footer-heading {
+  color: var(--footer-heading-text);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: var(--footer-text);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.slogan-text {
+  border-top: 1px solid #343a40;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Styling Floating Action Button (FAB) */
+.fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #343a40; /* Warna sedikit lebih terang dari footer */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.fab:hover {
+  background-color: #495057;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cta-title {
+    font-size: 1.8rem;
+  }
+  .main-footer {
+    text-align: center;
+  }
+  .footer-logo-wrapper {
+    justify-content: center;
+  }
+}

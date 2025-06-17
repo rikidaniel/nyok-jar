@@ -1,0 +1,103 @@
+<nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm bg-light py-3">
+  <div class="container">
+    <a class="navbar-brand fw-bold" routerLink="/home">
+      <span class="logo-nj">NJ</span> NyokJar
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="HomeComponent.NAVIGATE" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="LayananComponent.NAVIGATE" routerLinkActive="active">Layanan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="StrukturTimComponent.NAVIGATE" routerLinkActive="active">Struktur Tim</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="PembayaranComponent.NAVIGATE" routerLinkActive="active">Pembayaran</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="TestimoniComponent.NAVIGATE" routerLinkActive="active">Testimoni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="ChatKonsultasiComponent.NAVIGATE" routerLinkActive="active">Chat Konsultasi</a>
+        </li>
+      </ul>
+      <a [routerLink]="ChatKonsultasiComponent.NAVIGATE" class="btn btn-primary btn-consult-nav">Konsultasi Sekarang</a>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+<section class="cta-banner text-white text-center">
+  <div class="container py-5">
+    <h2 class="cta-title">Masih Bingung? Konsultasi Gratis Sekali, Yuk!</h2>
+    <p class="cta-subtitle">Dapatkan jawaban atas pertanyaan Anda dan temukan solusi terbaik untuk skripsi Anda.</p>
+    <a href="https://wa.me/62NOMOR_TELEPON" target="_blank" class="btn btn-whatsapp mt-3">
+      Chat Admin WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container">
+    <div class="row gy-4">
+
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-logo-wrapper">
+          <span class="logo-ny">NJ</span>
+          <span class="logo-text">NyokJar</span>
+        </div>
+        <p class="copyright-text mt-3">© 2025 NyokJar. All rights reserved.</p>
+      </div>
+
+      <div class="col-lg-2 col-md-6">
+        <h5 class="footer-heading">Tautan Cepat</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a routerLink="/home">Beranda</a></li>
+          <li><a routerLink="/layanan">Layanan</a></li>
+          <li><a routerLink="/struktur-tim">Struktur Tim</a></li>
+          <li><a routerLink="/pembayaran">Pembayaran</a></li>
+          <li><a routerLink="/testimoni">Testimoni</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <h5 class="footer-heading">Layanan Populer</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a routerLink="/layanan/bimbingan-skripsi">Bimbingan Skripsi</a></li>
+          <li><a routerLink="/layanan/bantuan-coding">Bantuan Coding</a></li>
+          <li><a routerLink="/layanan/analisis-data">Analisis Data</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <h5 class="footer-heading">Kontak Kami</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="mailto:nyokjar@gmail.com">nyokjar&commat;gmail.com</a></li>
+          <li><a routerLink="/jadwal">Jadwalkan Pertemuan</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-12 text-center slogan-text">
+        <p>Mempermudah jalan Anda menuju kelulusan.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+

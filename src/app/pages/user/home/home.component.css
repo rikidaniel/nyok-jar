@@ -1,104 +1,181 @@
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 60px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  font-family: 'Poppins', sans-serif;
+
+
+/* Hero Section Styling */
+.hero-section {
+  padding: 80px 15px; /* Padding atas dan bawah */
 }
 
-.logo a {
-  font-size: 24px;
-  font-weight: bold;
-  color: #0d6efd;
-  text-decoration: none;
-}
-
-.nav-menu ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  gap: 30px;
-}
-
-.nav-menu a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-menu a:hover {
-  color: #0d6efd;
-}
-
-.consultation-btn {
-  background-color: #0d6efd;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-
-.consultation-btn:hover {
-  background-color: #0b5ed7;
-}
-
-
-
-
-
-.hero-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 50px 60px;
-  background-color: #f8f9fa;
-  min-height: 80vh;
-  font-family: 'Poppins', sans-serif;
-}
-
-.hero-text {
-  max-width: 500px;
-}
-
-.hero-text h1 {
-  font-size: 48px;
+.hero-title {
+  font-size: 3.5rem; /* Ukuran font lebih besar untuk judul */
   font-weight: 700;
-  color: #212529;
-  margin-bottom: 20px;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
 }
 
-.hero-text p {
-  font-size: 18px;
-  color: #6c757d;
+.hero-subtitle {
+  font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 2.5rem;
 }
 
-.consultation-btn-main {
-  background-color: #0d6efd;
-  color: white;
-  border: none;
-  padding: 15px 30px;
+/* Tombol Konsultasi di Hero Section */
+.btn-consult-main {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 1.1rem;
   font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  padding: 15px 35px; /* Tombol lebih besar */
 }
 
-.consultation-btn-main:hover {
-  background-color: #0b5ed7;
+.btn-consult-main:hover {
+  background-color: #336fcc;
+  border-color: #336fcc;
 }
 
-.hero-image img {
-  max-width: 600px;
+/* Penyesuaian untuk layar yang lebih kecil */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-section {
+    padding: 40px 15px;
+  }
+}
+
+
+
+
+:host {
+  --primary-blue: #3b82f6;
+  --light-bg: #f8f9fa; /* Warna latar belakang abu-abu sangat terang */
+}
+
+.services-section {
+  padding: 80px 0;
+  background-color: var(--light-bg);
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #343a40;
+}
+
+.service-card {
+  background-color: #ffffff;
   border-radius: 12px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid var(--primary-blue);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 25px auto;
+  background-color: var(--primary-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  color: #212529;
+}
+
+.card-text {
+  color: #6c757d; /* text-muted */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  /* flex-grow: 1 akan mendorong link ke bawah jika deskripsi tidak sama panjang */
+  flex-grow: 1;
+  margin-bottom: 25px;
+}
+
+.card-link {
+  color: var(--primary-blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+/* Memberi latar belakang abu-abu dan menengahkan kartu */
+.ai-assistant-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 1rem;
+}
+
+/* Mengatur lebar maksimum dan gaya kartu */
+.card {
+  max-width: 650px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* Gaya untuk judul utama */
+.card-title {
+  color: #343a40;
+}
+
+/* Menyesuaikan ukuran font dan tinggi baris textarea */
+.form-control {
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Kustomisasi warna tombol utama agar sesuai dengan gambar */
+.btn-primary-custom {
+  background-color: #3573FE;
+  border-color: #3573FE;
+  border-radius: 8px;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.btn-primary-custom:hover {
+  background-color: #2862e8;
+  border-color: #2862e8;
+}
+
+/* Gaya untuk kotak output hasil AI */
+.ai-output-box {
+  background-color: #e9f2ff;
+  border: 1px solid #b8d6ff;
+  border-radius: 8px;
+  padding: 1.25rem;
+  color: #495057;
+  text-align: center;
 }

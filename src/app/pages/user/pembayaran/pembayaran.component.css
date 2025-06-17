@@ -1,0 +1,57 @@
+/* Variabel Global (bisa ditaruh di styles.css) */
+:host {
+  --primary-blue: #0d6efd;
+  --success-green: #198754;
+  --page-bg: #f8f9fa;
+  --custom-warn-bg: #fff9e6;
+  --custom-warn-border: #ffecb3;
+}
+
+.payment-page-container {
+  background-color: var(--page-bg);
+  padding: 50px 15px;
+}
+
+/* Kustomisasi p-card */
+:host ::ng-deep .payment-card {
+  max-width: 600px;
+  margin: 0 auto;
+  border-top: 5px solid var(--primary-blue);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+:host ::ng-deep .payment-card .p-card-header {
+  padding: 1.25rem 1.25rem 0 1.25rem;
+}
+:host ::ng-deep .payment-card .p-card-body {
+  padding-top: 1rem;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--primary-blue);
+}
+
+.bank-details .detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+.bank-details .detail-row span {
+  color: #6c757d;
+}
+
+/* Kustomisasi p-message */
+:host ::ng-deep .custom-warn-message.p-message {
+  background: var(--custom-warn-bg);
+  border: solid var(--custom-warn-border);
+  border-width: 0 0 0 6px;
+  color: #664d03;
+}
+:host ::ng-deep .custom-warn-message .p-message-icon,
+:host ::ng-deep .custom-warn-message .p-message-close {
+  display: none; /* Sembunyikan ikon bawaan PrimeNG */
+}
+:host ::ng-deep .custom-warn-message .p-message-wrapper {
+  padding: 1.25rem;
+}

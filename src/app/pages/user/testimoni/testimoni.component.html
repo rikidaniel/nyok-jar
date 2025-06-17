@@ -1,1 +1,22 @@
-<p>testimoni works!</p>
+<div class="testimonial-section">
+  <div class="text-center mb-4">
+    <h2 class="fw-bold">Apa Kata Mereka?</h2>
+  </div>
+
+  <p-card styleClass="testimonial-card">
+    <div class="d-flex flex-column align-items-center text-center">
+      <div class="testimonial-icon-wrapper">
+        <div class="icon-inner-box">??</div>
+      </div>
+
+      <blockquote class="testimonial-quote my-4">
+        "Rindu dia membuatku nyaman, engga gak perlu takut lagi dewa sama. Pelayanan NyokJar sangat membantu saya!"
+      </blockquote>
+
+      <p class="testimonial-author fw-bold mb-1">Sta Kunnorawati</p>
+      <p class="testimonial-affiliation text-muted mb-3">Mahasiswi, Universitas Jaya</p>
+
+      <p-rating [(ngModel)]="ratingValue" [readonly]="true"></p-rating>
+    </div>
+  </p-card>
+</div>

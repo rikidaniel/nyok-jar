@@ -1,0 +1,54 @@
+:host {
+  --primary-blue: #4a90e2;
+  --page-bg: #f0f4f8;
+  --star-yellow: #fabb05;
+}
+
+.testimonial-section {
+  background-color: var(--page-bg);
+  padding: 60px 15px;
+}
+
+:host ::ng-deep .testimonial-card {
+  max-width: 580px;
+  margin: 0 auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+}
+:host ::ng-deep .testimonial-card .p-card-body {
+  padding: 2.5rem;
+}
+
+/* Ikon kustom, karena tidak ada di PrimeNG */
+.testimonial-icon-wrapper {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-color: #eaf2fb;
+  border: 3px solid var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-inner-box {
+  border: 2px solid var(--primary-blue);
+  color: var(--primary-blue);
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  padding: 2px 10px;
+}
+
+.testimonial-quote {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+.testimonial-author {
+  font-size: 1.15rem;
+}
+
+/* Kustomisasi warna bintang p-rating */
+:host ::ng-deep .p-rating .p-rating-icon.pi-star-fill {
+  color: var(--star-yellow) !important;
+}

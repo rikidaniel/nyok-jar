@@ -1,1 +1,35 @@
-<p>pembayaran works!</p>
+<div class="payment-page-container">
+  <div class="text-center mb-4">
+    <h2 class="fw-bold">Metode Pembayaran</h2>
+    <p class="text-muted">Selesaikan pembayaran Anda dengan mudah melalui transfer bank. Berikut adalah detail rekening kami.</p>
+  </div>
+
+  <p-card styleClass="payment-card">
+    <ng-template pTemplate="header">
+      <h5 class="card-title text-primary-custom fw-bolder">Transfer Bank BRI</h5>
+    </ng-template>
+
+    <div class="bank-details">
+      <div class="detail-row">
+        <span>Nama Bank:</span>
+        <strong>BANK RAKYAT INDONESIA (BRI)</strong>
+      </div>
+      <div class="detail-row">
+        <span>Nomor Rekening:</span>
+        <strong>XXXX-XXXX-XXXX-XXXX</strong>
+      </div>
+      <div class="detail-row">
+        <span>Atas Nama:</span>
+        <strong>PT. NYOKJAR BERSAMA</strong>
+      </div>
+    </div>
+
+    <p-message severity="warn" styleClass="mt-4 custom-warn-message">
+      <div class="w-full">
+        <p class="fw-bold mb-1">Penting:</p>
+        <p class="mb-3">Mohon lakukan konfirmasi pembayaran Anda setelah transfer berhasil dengan menghubungi admin kami melalui WhatsApp.</p>
+        <p-button label="Konfirmasi Pembayaran via WhatsApp" styleClass="p-button-success w-full"></p-button>
+      </div>
+    </p-message>
+  </p-card>
+</div>

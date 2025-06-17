@@ -1,1 +1,91 @@
-<p>layanan works!</p>
+<div class="container my-5">
+  <h2 class="text-center fw-bold h2 mb-5">Layanan Kami</h2>
+
+  <div class="accordion-container">
+    <div class="accordion-item" [class.active]="activeIndex === 0">
+      <div class="accordion-header" (click)="toggleAccordion(0)">
+        <span>Bimbingan Skripsi</span>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+      <div class="accordion-content">
+        <div class="content-inner">
+          <p>Kami menyediakan bimbingan personal untuk setiap tahap penulisan skripsi Anda...</p>
+          <ul>
+            <li>Pembentukan judul & latar belakang masalah.</li>
+            <li>Penyusunan kerangka berpikir & bab 1-3.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item" [class.active]="activeIndex === 1">
+      <div class="accordion-header" (click)="toggleAccordion(1)">
+        <span>Bantuan Coding</span>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+      <div class="accordion-content">
+        <div class="content-inner">
+          <p>Tim ahli kami siap membantu Anda dalam berbagai kebutuhan coding...</p>
+          <ul>
+            <li>Pembuatan program aplikasi (web/mobile/desktop).</li>
+            <li>Debugging dan perbaikan error pada kode.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item" [class.active]="activeIndex === 2">
+      <div class="accordion-header" (click)="toggleAccordion(2)">
+        <span>Analisis Data</span>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+      <div class="accordion-content">
+        <div class="content-inner">
+          <p>Kami menawarkan layanan analisis data menggunakan berbagai metode statistik...</p>
+          <ul>
+            <li>Konsultasi metodologi analisis data.</li>
+            <li>Uji statistik (regresi, korelasi, t-test, dll.).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item" [class.active]="activeIndex === 3">
+      <div class="accordion-header" (click)="toggleAccordion(3)">
+        <span>Proofreading & Presentasi</span>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+      <div class="accordion-content">
+        <div class="content-inner">
+          <p>Pastikan skripsi Anda bebas dari kesalahan tata bahasa dan siap presentasi...</p>
+          <ul>
+            <li>Pemeriksaan tata bahasa, ejaan, dan tanda baca.</li>
+            <li>Review slide presentasi.</li>
+          </ul>
+
+          <div class="mt-4 pt-4 border-top">
+            <div class="text-center">
+              <h4 class="h4 fw-semibold mb-3">✨ Generator Poin Presentasi AI</h4>
+              <p class="text-muted mb-3">Masukkan topik presentasi Anda...</p>
+            </div>
+            <textarea class="form-control" rows="4" [(ngModel)]="presentationTopic" placeholder="Contoh: 'Strategi Pemasaran Digital'..."></textarea>
+            <button class="btn btn-primary w-100 mt-3" (click)="generatePresentationPoints()">
+              <span *ngIf="!isLoading">✨ Hasilkan Poin Presentasi</span>
+              <div *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </button>
+            <div *ngIf="generatedPoints || errorMessage" class="mt-4">
+              <div *ngIf="generatedPoints" class="result-box p-3 border rounded"><pre>{{ generatedPoints }}</pre></div>
+              <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+            </div>
+            <div *ngIf="generatedPoints" class="mt-3 text-center">
+              <button (click)="copyOutput()" class="btn btn-secondary btn-sm">Salin</button>
+              <div *ngIf="copySuccessMessage" class="text-success mt-2">{{ copySuccessMessage }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
