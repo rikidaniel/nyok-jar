@@ -1,0 +1,104 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-family: 'Poppins', sans-serif;
+}
+
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #0d6efd;
+}
+
+.consultation-btn {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.consultation-btn:hover {
+  background-color: #0b5ed7;
+}
+
+
+
+
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 60px;
+  background-color: #f8f9fa;
+  min-height: 80vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: #6c757d;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.consultation-btn-main {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.consultation-btn-main:hover {
+  background-color: #0b5ed7;
+}
+
+.hero-image img {
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}

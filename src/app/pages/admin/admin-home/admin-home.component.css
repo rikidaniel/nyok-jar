@@ -1,0 +1,50 @@
+.desktop-z-3 {
+  z-index: 3;
+}
+
+.mobile-z-0 {
+  z-index: 0;
+}
+
+mat-sidenav.mat-drawer {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.sidebar{
+  width: 200px;
+  background-color: #f8f9fa;
+  box-shadow: 2px 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.ic_circle_people{
+  height: 100px;
+  width: 100px;
+}
+
+
+
+/*style button menu*/
+a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+}
+a.active {
+  background-color: var(--app-primary-color);
+  margin: 3px;
+  border: #666666;
+  border-radius: 8px;
+  color: white;
+}
+a:hover {
+  background-color: var(--app-primary-color);
+  cursor: pointer;
+  border: #666666;
+  border-radius: 8px;
+  margin: 3px;
+  transition-delay: 0.2s;
+
+}
+

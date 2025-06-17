@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+:root {
+  /* Primary Colors */
+  --app-primary-color: #3392ff;
+  --app-primary-light: #6A58C3;
+  --app-primary-dark: #301E7A;
+
+  /* Secondary Colors */
+  --app-secondary-color: #B771E5;
+  --app-secondary-light: #D3A7F1;
+  --app-secondary-dark: #8E4FB5;
+
+  /* Info Colors */
+  --app-info-color: #AEEA94;
+  --app-info-light: #D2F2C4;
+  --app-info-dark: #85BF6E;
+
+  /* Other Utility Colors */
+  --app-warning-color: #f1c40f;
+  --app-success-color: #2ecc71;
+  --app-danger-color: #e74c3c;
+
+  /* Text and Background */
+  --app-text-color: #333;
+  --app-text-light: #666;
+  --app-text-dark: #000;
+  --app-background-color: #f4f4f4;
+  --app-background-dark: #eaeaea;
+}

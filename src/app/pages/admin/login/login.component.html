@@ -1,0 +1,37 @@
+<div class="container-fluid d-flex justify-content-center align-items-center">
+
+  <div class="card col-sm-8 col-md-6 col-lg-4 col-xl-3 animate__animated animate__zoomInDown">
+    <div class="card-img bg-secondary-subtle text-center">
+      <img src="assets/undraw_access-account_aydp.svg" class="p-3 img-header-login" alt="">
+    </div>
+    <div class="card-body text-center">
+      <h3 class="text-center fw-bold mb-5" >LOGIN</h3>
+      <form [formGroup]="signInFormControl" (ngSubmit)="onSubmit(signInFormControl.value)">
+        <p-inputgroup styleClass="mb-3">
+          <p-inputgroup-addon styleClass="bg-icon-form">
+            <i class="pi pi-user"></i>
+          </p-inputgroup-addon>
+          <input type="email" pInputText placeholder="username" formControlName="username" required
+                 [ngClass]="{ 'is-invalid': submitted && signInFormControl.controls['username'].errors}">
+        </p-inputgroup>
+
+        <p-inputgroup styleClass="mb-3">
+          <p-inputgroup-addon styleClass="bg-icon-form">
+            <i class="pi pi-lock"></i>
+          </p-inputgroup-addon>
+          <input [type]="passwordFieldType" pInputText placeholder="password" formControlName="password" required
+                 [ngClass]="{ 'is-invalid': submitted && signInFormControl.controls['password'].errors}">
+        </p-inputgroup>
+        <div class="form-check mb-5 text-start">
+          <input class="form-check-input" type="checkbox" (change)="togglePasswordVisibility()" id="showPassword">
+          <label class="form-check-label" for="showPassword">
+            Show Password
+          </label>
+        </div>
+
+        <p-button type="submit" [loading]="loading" label="LOGIN" severity="info" class="w-100" styleClass="mb-3 w-100"/>
+      </form>
+
+    </div>
+  </div>
+</div>

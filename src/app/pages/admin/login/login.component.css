@@ -1,0 +1,26 @@
+.container-fluid{
+  background-image: url('/assets/bg_login.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+
+.img-header-login{
+  height: 200px;
+  width: 300px;
+  object-fit: fill;
+}
+
+
+.bg-icon-form{
+  background-color: var(--app-primary-color);
+  color: white;
+}
