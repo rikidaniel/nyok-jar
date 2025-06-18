@@ -1,21 +1,15 @@
 import { Component } from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {Accordion, AccordionContent, AccordionHeader, AccordionPanel, AccordionTab} from 'primeng/accordion';
-import {Textarea} from 'primeng/textarea';
-import {Button} from 'primeng/button';
 import {NgIf} from '@angular/common';
+import {finalize} from 'rxjs';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {environment} from '../../../../environments/environment.prod';
 
 @Component({
   selector: 'app-layanan',
   imports: [
     FormsModule,
-    Accordion,
-    Textarea,
-    Button,
-    NgIf,
-    AccordionPanel,
-    AccordionHeader,
-    AccordionContent
+    NgIf
   ],
   templateUrl: './layanan.component.html',
   styleUrl: './layanan.component.css'
@@ -25,41 +19,75 @@ export class LayananComponent {
   static readonly NAVIGATE = '/navigation/layanan';
 
 
-  // Indeks dari item yang sedang aktif/terbuka
-  activeIndex: number | null = 3; // Item ke-4 (indeks 3) terbuka secara default
+  // Accordion: tidak ada yang terbuka di awal
+  activeIndex: number | null = null;
 
-  // Data untuk AI Generator (tetap sama)
+  // Generator Poin Presentasi
   presentationTopic: string = '';
   generatedPoints: string = '';
   isLoading: boolean = false;
   errorMessage: string = '';
   copySuccessMessage: string = '';
 
-  // Fungsi untuk membuka/menutup item accordion
+  private readonly GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
+  private readonly GEMINI_API_KEY = environment.geminiApiKey;
+
+  constructor(private http: HttpClient) {}
+
   toggleAccordion(index: number): void {
-    if (this.activeIndex === index) {
-      // Jika item yang sama diklik lagi, tutup item tersebut
-      this.activeIndex = null;
-    } else {
-      // Jika item lain diklik, buka item tersebut
-      this.activeIndex = index;
-    }
+    this.activeIndex = this.activeIndex === index ? null : index;
   }
 
-  // Fungsi untuk AI Generator (tetap sama)
   generatePresentationPoints(): void {
-    if (!this.presentationTopic.trim()) {
-      this.errorMessage = 'Topik presentasi tidak boleh kosong!';
+    if (!this.presentationTopic.trim() || this.isLoading) {
+      this.errorMessage = 'Topik presentasi tidak boleh kosong.';
       return;
     }
+
     this.isLoading = true;
     this.generatedPoints = '';
     this.errorMessage = '';
     this.copySuccessMessage = '';
-    setTimeout(() => {
-      this.generatedPoints = `Poin-poin untuk "${this.presentationTopic}":\n\n1. Latar Belakang Masalah.\n2. Analisis Situasi.\n3. Strategi Implementasi.`;
-      this.isLoading = false;
-    }, 1500);
+
+    const headers = new HttpHeaders().set('x-goog-api-key', this.GEMINI_API_KEY);
+    const prompt = `
+      Anda adalah asisten AI yang membantu mahasiswa mempersiapkan presentasi skripsi.
+      Berdasarkan topik: "${this.presentationTopic}"
+
+      Buatkan 3 poin utama presentasi:
+      1. Pendahuluan (latar belakang, tujuan)
+      2. Metode (jenis penelitian, teknik analisis)
+      3. Hasil dan rekomendasi
+
+      Gunakan format poin-poin rapi, singkat, dan jelas.
+    `;
+
+    const body = {
+      contents: [
+        { parts: [{ text: prompt }] }
+      ],
+      generationConfig: {
+        temperature: 0.7,
+        topK: 1,
+        topP: 1,
+        maxOutputTokens: 1024
+      }
+    };
+
+    this.http.post<any>(this.GEMINI_API_URL, body, { headers })
+      .pipe(finalize(() => this.isLoading = false))
+      .subscribe({
+        next: (res) => {
+          try {
+            this.generatedPoints = res.candidates?.[0]?.content?.parts?.[0]?.text ?? '';
+          } catch (e) {
+            this.errorMessage = 'Gagal membaca respon dari AI.';
+          }
+        },
+        error: (err) => {
+          this.errorMessage = 'Gagal menghasilkan poin dari AI.';
+        }
+      });
   }
 
   copyOutput(): void {

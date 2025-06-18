@@ -14,6 +14,9 @@
         <a [routerLink]="ConsultationListComponent.ROUTER" routerLinkActive="active">
           <i class="pi pi-list me-2"></i> Consult List
         </a>
+        <a [routerLink]="ScheduleListComponent.ROUTER" routerLinkActive="active">
+          <i class="pi pi-calendar me-2"></i> Schedule List
+        </a>
       </div>
 
       <div class="d-flex justify-content-center mb-3">
@@ -22,13 +25,13 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content class="overflow-y-auto" [ngClass]="{'desktop-z-3': !isMobile, 'mobile-z-0': isMobile}">
-    <mat-toolbar class="ps-3 pe-3 text-bg-light sticky-top shadow-sm">
+  <div class="overflow-y-auto" [ngClass]="{'desktop-z-3': !isMobile, 'mobile-z-0': isMobile}">
+    <mat-toolbar class="ps-3 pe-3 text-bg-light shadow-sm">
       <p-button [hidden]="btnIsVisible"  variant="outlined" icon="pi pi-bars" size="small" (click)="toggleMenu()"/>
       <p class="fw-bold fs-4 m-3">{{title}}</p>
     </mat-toolbar>
     <div class="container-fluid p-0">
       <router-outlet></router-outlet>
     </div>
-  </mat-sidenav-content>
+  </div>
 </mat-sidenav-container>

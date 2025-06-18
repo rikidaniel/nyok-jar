@@ -86,3 +86,77 @@ textarea.form-control {
     border-right: 1px solid #dee2e6;
   }
 }
+
+
+
+
+
+.section-wa{
+  background-color: #f8f9fa; /* Warna latar belakang abu-abu muda seperti di contoh */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Card Styling */
+.chat-card {
+  background-color: #ffffff;
+  border: 1px solid #e7eaf3; /* Border halus */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Shadow halus */
+  max-width: 450px; /* Lebar maksimum card */
+  width: 100%;
+}
+
+/* Icon Circle Styling */
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #e0f2fe; /* Warna latar belakang ikon (biru muda) */
+  border: 3px solid #3b82f6; /* Warna border ikon (biru) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.icon-circle .pi {
+  font-size: 40px; /* Ukuran ikon tanda tanya */
+  color: #3b82f6; /* Warna ikon (biru) */
+}
+
+/* Heading Styling */
+.chat-card h2 {
+  font-weight: 700; /* Font tebal */
+  color: #212529; /* Warna teks hitam */
+}
+
+/* Paragraph Styling */
+.chat-card p {
+  color: #6c757d; /* Warna teks abu-abu (muted) */
+  line-height: 1.6;
+}
+
+/* PrimeNG Button Customization */
+.p-button {
+  transition: all 0.3s ease; /* Transisi halus untuk hover */
+}
+
+.p-button.p-button-success {
+  background-color: #16a34a; /* Warna hijau tombol */
+  border-color: #16a34a;
+}
+
+.p-button.p-button-success:hover {
+  background-color: #15803d; /* Warna hijau lebih gelap saat hover */
+  border-color: #15803d;
+}
+
+/* Memberikan padding horizontal pada tombol agar lebih lebar */
+.p-button-lg {
+  font-size: 1rem;
+  padding: 0.75rem 2rem !important;
+}

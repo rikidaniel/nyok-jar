@@ -73,9 +73,13 @@
 
 /* === Styling untuk AI Generator (tambahan) === */
 .result-box {
-  background-color: #f8f9fa;
-  text-align: left;
+  max-height: 300px; /* atau berapa pun yang kamu rasa nyaman */
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  white-space: pre-wrap;
+  font-family: 'Courier New', monospace;
 }
+
 .result-box pre {
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -83,4 +87,18 @@
   font-family: inherit;
   font-size: 0.95rem;
   color: #374151;
+}
+
+
+.result-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.result-box::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
+
+.result-box::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
 }

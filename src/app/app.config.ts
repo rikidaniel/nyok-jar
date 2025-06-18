@@ -25,14 +25,14 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
 
     // Konfigurasi Firebase
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
 
     provideAuth(() => getAuth()),
 
     // Service tambahan untuk Analytics agar terintegrasi dengan Router
     ScreenTrackingService,
-    UserTrackingService, provideFirebaseApp(() => initializeApp(environment.firebase)),
+    UserTrackingService,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideDatabase(() => getDatabase()),
     providePrimeNG({
@@ -47,6 +47,10 @@ export const appConfig: ApplicationConfig = {
       // },
       // ripple: true
     }),
-    provideStorage(() => getStorage()), provideFirebaseApp(() => initializeApp({ projectId: "nyok-jar-b4d44", appId: "1:41971672600:web:c05392ba1c79794af1456d", storageBucket: "nyok-jar-b4d44.firebasestorage.app", apiKey: "AIzaSyDZmpTXe9dincyiC0ZfBa-yEGayKEgG4XA", authDomain: "nyok-jar-b4d44.firebaseapp.com", messagingSenderId: "41971672600", measurementId: "G-5VTS1BYSBF" })), provideFirestore(() => getFirestore()), provideDatabase(() => getDatabase()), provideStorage(() => getStorage())
+    provideStorage(() => getStorage()), provideFirebaseApp(() => initializeApp({ projectId: "nyokjar2", appId: "1:199554869322:web:4f7bbbd25d101195bc5eb3", storageBucket: "nyokjar2.firebasestorage.app", apiKey: "AIzaSyAIHYNQJZqYbR8arv5_WqKE99SW-NYqq3A", authDomain: "nyokjar2.firebaseapp.com", messagingSenderId: "199554869322", measurementId: "G-QKZGRC6MQV" })), provideFirestore(() => getFirestore()),
+
+
+
+
   ]
 };

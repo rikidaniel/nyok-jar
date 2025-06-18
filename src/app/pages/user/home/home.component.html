@@ -75,7 +75,7 @@
 
 
 <div class="ai-assistant-container">
-  <div class="card shadow-sm">
+  <div class="card shadow-sm m-5">
     <div class="card-body p-4 p-md-5">
 
       <h2 class="card-title text-center fw-bold mb-3">
@@ -90,7 +90,7 @@
         <textarea
           class="form-control"
           id="topic-input"
-          rows="4"
+          rows="6"
           placeholder="Contoh: 'Pengaruh media sosial terhadap kesehatan mental remaja' atau 'Perkembangan teknologi AI dalam pendidikan.'"
           [(ngModel)]="userInput"
           [disabled]="isLoading"
@@ -98,8 +98,8 @@
       </div>
 
       <div class="d-grid">
-        <button class="btn btn-primary-custom btn-lg fw-semibold" (click)="generateIdeas()" [disabled]="isLoading">
-          <span *ngIf="!isLoading">✨ Dapatkan Ide Skripsi</span>
+        <button class="btn btn-primary-custom btn-lg fw-semibold rounded-pill" (click)="generateIdeas()" [disabled]="isLoading">
+          <span *ngIf="!isLoading" class="text-light">✨ Dapatkan Ide Skripsi</span>
           <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
           <span *ngIf="isLoading"> Memproses...</span>
         </button>

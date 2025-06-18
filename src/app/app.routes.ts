@@ -10,6 +10,7 @@ import {PembayaranComponent} from './pages/user/pembayaran/pembayaran.component'
 import {StrukturTimComponent} from './pages/user/struktur-tim/struktur-tim.component';
 import {TestimoniComponent} from './pages/user/testimoni/testimoni.component';
 import {ChatKonsultasiComponent} from './pages/user/chat-konsultasi/chat-konsultasi.component';
+import {ScheduleListComponent} from './pages/admin/schedule-list/schedule-list.component';
 
 export const routes: Routes = [
   { path: LoginComponent.ROUTER, component: LoginComponent },
@@ -37,7 +38,13 @@ export const routes: Routes = [
         path: ConsultationListComponent.ROUTER,
         component: ConsultationListComponent,
         canActivate: [AdminGuard]
-      }
+      },
+      {
+        path: ScheduleListComponent.ROUTER,
+        component: ScheduleListComponent,
+        canActivate: [AdminGuard]
+      },
+
     ]
   },
 

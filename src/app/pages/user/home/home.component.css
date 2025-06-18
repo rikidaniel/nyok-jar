@@ -131,14 +131,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
   background-color: #f8f9fa;
   padding: 1rem;
 }
 
 /* Mengatur lebar maksimum dan gaya kartu */
 .card {
-  max-width: 650px;
+  max-width: 850px;
   width: 100%;
   border: none;
   border-radius: 12px;

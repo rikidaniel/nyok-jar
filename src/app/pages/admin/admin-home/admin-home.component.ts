@@ -13,6 +13,7 @@ import {NgClass} from '@angular/common';
 import {ConsultationListComponent} from '../consultation-list/consultation-list.component';
 import {LoginComponent} from '../login/login.component';
 import {User} from '../login/user.model';
+import {ScheduleListComponent} from '../schedule-list/schedule-list.component';
 
 @Component({
   selector: 'app-admin-home',
@@ -96,6 +97,7 @@ export class AdminHomeComponent implements OnInit {
   updateTitle(url: string) {
     const titleMap: Record<string, string> = {
       '/consultation-list': ConsultationListComponent.TITLE,
+      '/schedule-list': ScheduleListComponent.TITLE,
     };
 
     this.title = 'Dashboard';
@@ -120,4 +122,5 @@ export class AdminHomeComponent implements OnInit {
   }
 
   protected readonly ConsultationListComponent = ConsultationListComponent;
+  protected readonly ScheduleListComponent = ScheduleListComponent;
 }
